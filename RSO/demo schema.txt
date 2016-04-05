@@ -1,0 +1,30 @@
+{ 
+    "Start": [
+    "Mongos - APN": {
+        "Priority": 01,
+        "Name": "Mongos - APN"
+    },
+    "PeanutButterJellyTime: {
+        "Priority": 50,
+        "Name": "SAJ.Background.PBJMaker"
+    },
+    "DataDog Agent": {
+        "Priority": 99,
+        "Name": "DataDog Agent"
+    }
+    ]
+    "Stop": [
+    "Datadog Agent": {
+        Priority": 01,
+        "Name": "Datadog Agent"
+    },
+    "PeanutButterJellyTime: {
+        "Priority": 50,
+        "Name": "SAJ.Background.PBJMaker"
+    },
+    "Mongos - APN": {
+        "Priority": 99,
+        "Name": "Mongos - APN"
+    }
+    ]
+}

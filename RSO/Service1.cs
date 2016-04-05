@@ -23,9 +23,11 @@ namespace RSO
         protected override void OnStart(string[] args)
         {
             string ServicesOrder = File.ReadAllText("services.json");
-            ServiceOperations ServicesFile = JsonConvert.DeserializeObject<ServiceOperations>(ServicesOrder);
-
+            Newtonsoft.Json.Linq.JObject config = Newtonsoft.Json.Linq.JObject.Parse(ServicesOrder);
+            //ServiceOperations ServicesFile = JsonConvert.DeserializeObject<configSchema>(ServicesOrder);
+            string output = JsonConvert.SerializeObject(config);
             System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStart.txt");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "OnStart.txt", (string)config);
         }
 
         protected override void OnStop()
